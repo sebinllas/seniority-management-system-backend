@@ -1,3 +1,5 @@
 venv
 .vscode
 .idea
+#pycache folders
+__pycache__
