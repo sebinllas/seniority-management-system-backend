@@ -1,9 +1,7 @@
 from fastapi import APIRouter
 
-import src.services.employee as employee_service
-import src.services.account as account_service
-from src.models import Employee
-from src.models import Account
+import src.account.service as account_service
+from src.account.models import Account
 
 router = APIRouter()
 

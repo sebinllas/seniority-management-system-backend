@@ -1,6 +1,6 @@
 from sqlmodel import Session, select
 
-from src.models import Account
+from src.account.models import Account
 
 
 def get_all() -> list[Account]:

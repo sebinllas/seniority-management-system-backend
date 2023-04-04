@@ -1,9 +1,22 @@
-from sqlmodel import Field, Relationship, SQLModel
-from typing import List, Optional, TYPE_CHECKING
-from datetime import datetime
+from typing import List, TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from src.models import Employee, Skill, SkillValidationRequestComment
+    from src.employee.models import Employee
+    from src.skill.models import Skill
+
+from sqlmodel import Field, Relationship, SQLModel
+from typing import Optional
+from datetime import datetime
+
+
+class SkillValidationRequestComment(SQLModel, table=True):
+    __tablename__ = 'skill_validation_request_comment'  # type: ignore
+    id: Optional[int] = Field(default=None, primary_key=True)
+    request_id: int = Field(foreign_key='skill_validation_request.id')
+    request: "SkillValidationRequest" = Relationship(back_populates='comments')
+    comment: str
+    date: datetime = Field(default_factory=datetime.now)
+
 
 class SkillValidationRequest(SQLModel, table=True):
     __tablename__ = 'skill_validation_request'  # type: ignore

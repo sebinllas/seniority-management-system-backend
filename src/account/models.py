@@ -1,10 +1,11 @@
 from datetime import datetime
 from enum import Enum
-from typing import TYPE_CHECKING, List, Optional
+from typing import TYPE_CHECKING, Optional
+
 from sqlmodel import Field, Relationship, SQLModel
 
 if TYPE_CHECKING:
-    from src.models import Employee
+    from src.employee.models import Employee
 
 
 class AccountType(str, Enum):

@@ -2,8 +2,8 @@ from typing import List
 
 from fastapi import APIRouter
 
-import src.services.employee as employee_service
-from src.models import Employee
+import src.employee.service as employee_service
+from src.employee.models import Employee
 
 router = APIRouter()
 

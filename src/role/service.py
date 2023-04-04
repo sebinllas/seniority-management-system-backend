@@ -1,19 +1,19 @@
 from sqlmodel import Session, select
 
-from src.config.db import engine
-from src.models import Employee
+from src.db import engine
+from src.role.models import Role
 
 
 def get_all():
     with Session(engine) as session:
-        statement = select(Employee)
+        statement = select(Role)
         result = session.exec(statement)
         return result.all()
 
 
-def create(employee: Employee):
+def create(role: Role):
     with Session(engine) as session:
-        session.add(employee)
+        session.add(role)
         session.commit()
-        session.refresh(employee)
-        return employee
+        session.refresh(role)
+        return role

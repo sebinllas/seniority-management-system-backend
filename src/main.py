@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from src.controllers import employee
-from src.controllers import role
+from src.employee import router as employee
+from src.role import router as role
 
 app = FastAPI()
 

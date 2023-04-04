@@ -1,8 +1,10 @@
 from typing import TYPE_CHECKING, List, Optional
+
 from sqlmodel import Field, Relationship, SQLModel
 
 if TYPE_CHECKING:
-    from src.models import Employee, SeniorityLevel
+    from src.seniority_level.models import SeniorityLevel
+    from src.employee.models import Employee
 
 
 class Role(SQLModel, table=True):

@@ -2,8 +2,8 @@ from typing import List
 
 from fastapi import APIRouter
 
-import src.services.role as role_service
-from src.models import Role
+import src.role.service as role_service
+from src.role.models import Role
 
 router = APIRouter()
 
