@@ -26,8 +26,8 @@ class EmployeeSkill(SQLModel, table=True):
 
 class Employee(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
-    name: Optional[str]
-    email: Optional[str]
+    name: str
+    email: str
     biography: Optional[str]
     role_id: Optional[int] = Field(default=None, foreign_key='role.id')
     role: Optional["Role"] = Relationship(back_populates='employees')

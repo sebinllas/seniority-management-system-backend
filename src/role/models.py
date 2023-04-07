@@ -9,7 +9,7 @@ if TYPE_CHECKING:
 
 class Role(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
-    name: str
+    name: str = Field(unique=True)
     description: Optional[str]
     seniority_levels: Optional["SeniorityLevel"] = Relationship(
         back_populates='role')
